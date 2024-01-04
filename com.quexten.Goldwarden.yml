@@ -24,7 +24,7 @@ finish-args:
 modules:
   - ./python3-requirements.json
   - name: wl-clipboard
-    buildsystem: meson 
+    buildsystem: meson
     config-opts:
       - -Dfishcompletiondir=no
     sources:
@@ -41,18 +41,18 @@ modules:
       - install -Dm644 ./ui/com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
-        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.7.tar.gz
-        sha256: b0232a2d1eae26163e87cd0cb72dc6e37d4464433d6475fd84b7ee1dd9d470a6
+        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.9.tar.gz
+        sha256: 1172c304e2ad0a33044ef8641ca6283f9980a6efa3a51da1aea498effef2dae2
   - name: goldwarden-core-daemon
     buildsystem: simple
     build-commands:
       - install -D goldwarden_linux_* /app/bin/goldwarden
     sources:
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.7/goldwarden_linux_x86_64
-        sha256: 74529b83f5b4a7de1c48d230d5fa26dc06926999f43d4ca37849df06cc39710e
+        url: https://github.com/quexten/goldwarden/releases/download/v0.2.9/goldwarden_linux_x86_64
+        sha256: c7f00f1390cc2ffddb4f2ca2d87bd5294cfcab61d7098cd1593d8408c757f08c
         only-arches: [x86_64]
       - type: file
         url: https://github.com/quexten/goldwarden/releases/download/v0.2.7/goldwarden_linux_arm64
-        sha256: 56b36c508998256b0dd4cc4019d0f4eafa341ed067569968001af6a6d57c9a26
+        sha256: da1283bde9f20e6e938e8ca4fb32a41af9bec9a52dea50c373037d56780d5093
         only-arches: [aarch64]
