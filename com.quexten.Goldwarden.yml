@@ -17,6 +17,9 @@ finish-args:
   - --talk-name=org.gnome.ScreenSaver
   - --talk-name=org.freedesktop.ScreenSaver
 
+  # Notifications
+  - --talk-name=org.freedesktop.Notifications
+
   # pinentry & approval
   - --talk-name=org.gnome.keyring.SystemPrompter
   # biometric / user password auth
