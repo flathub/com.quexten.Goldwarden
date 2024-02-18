@@ -2,7 +2,7 @@ id: com.quexten.Goldwarden
 runtime: org.gnome.Platform
 runtime-version: '45'
 sdk: org.gnome.Sdk
-command: main.py
+command: goldwarden_ui_main.py
 finish-args:
   # Allow network access for sync
   - --share=network
@@ -26,36 +26,29 @@ finish-args:
   - --system-talk-name=org.freedesktop.PolicyKit1
 modules:
   - ./python3-requirements.json
-  - name: wl-clipboard
-    buildsystem: meson
-    config-opts:
-      - -Dfishcompletiondir=no
-    sources:
-      - type: git
-        url: https://github.com/bugaevc/wl-clipboard.git
-        tag: v2.2.1
   - name: goldwarden-python-ui
     buildsystem: simple
     build-commands:
-      - cp -R ./ui/* /app/bin
-      - chmod +x /app/bin/main.py
-      - install -D ./ui/com.quexten.Goldwarden.desktop /app/share/applications/com.quexten.Goldwarden.desktop
-      - install -D ./ui/goldwarden.svg /app/share/icons/hicolor/scalable/apps/com.quexten.Goldwarden.svg
-      - install -Dm644 ./ui/com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
+      - mkdir -p /app/bin
+      - cp -R ./gui/* /app/bin
+      - chmod +x /app/bin/goldwarden_ui_main.py
+      - install -D ./gui/com.quexten.Goldwarden.desktop /app/share/applications/com.quexten.Goldwarden.desktop
+      - install -D ./gui/goldwarden.svg /app/share/icons/hicolor/scalable/apps/com.quexten.Goldwarden.svg
+      - install -Dm644 ./gui/com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
-        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.10.tar.gz
-        sha256: 7d9f7ab6aa148d423bfc681c464105e865de5fece6695310c854e84409ad716f
+        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.12.tar.gz
+        sha256: 7d354cb56d3b394e4b02e47b844718d51a195b1f327382d164350d577afbd12c
   - name: goldwarden-core-daemon
     buildsystem: simple
     build-commands:
       - install -D goldwarden_linux_* /app/bin/goldwarden
     sources:
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.10/goldwarden_linux_x86_64
-        sha256: da6620175a34c9461d0be3133a4e9054dc67c7a2d31a7a8b015639ae87e4aeea
+        url: https://github.com/quexten/goldwarden/releases/download/v0.2.12/goldwarden_linux_x86_64
+        sha256: b0d8c27c9eccd1399aff84f8777cf4f2d13fa7ccb10aa6dc464c19106bd30eb4
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.10/goldwarden_linux_arm64
-        sha256: 3bf598aa2e2f622117ca5d74760b6999a3b969a704cdd0aac7767fffbbc41f9c
+        url: https://github.com/quexten/goldwarden/releases/download/v0.2.12/goldwarden_linux_arm64
+        sha256: 619ecfdb5d29b4ca32687a5d440b1d338bac3d6cce56c84147884461d1cdf545
         only-arches: [aarch64]
