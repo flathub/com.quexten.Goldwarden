@@ -37,18 +37,18 @@ modules:
       - install -Dm644 ./gui/com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
-        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.12.tar.gz
-        sha256: 7d354cb56d3b394e4b02e47b844718d51a195b1f327382d164350d577afbd12c
+        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.13.tar.gz
+        sha256: ba9e08b43937fa20732ae54a49d55249d22b46ad35b5553b71c3650d8720f67b
   - name: goldwarden-core-daemon
     buildsystem: simple
     build-commands:
       - install -D goldwarden_linux_* /app/bin/goldwarden
     sources:
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.12/goldwarden_linux_x86_64
-        sha256: b0d8c27c9eccd1399aff84f8777cf4f2d13fa7ccb10aa6dc464c19106bd30eb4
+        url: https://github.com/quexten/goldwarden/releases/download/v0.2.13/goldwarden_linux_x86_64
+        sha256: 187783b096706003fb463fd279d60cd4ac970a012270b546cad835dcc26aeede
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.12/goldwarden_linux_arm64
-        sha256: 619ecfdb5d29b4ca32687a5d440b1d338bac3d6cce56c84147884461d1cdf545
+        url: https://github.com/quexten/goldwarden/releases/download/v0.2.13/goldwarden_linux_arm64
+        sha256: 2b4d08e4000b232599550a6b57ed266bdb28ccbde26939de42269a283a9bd91e
         only-arches: [aarch64]
