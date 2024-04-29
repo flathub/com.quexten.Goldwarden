@@ -39,6 +39,12 @@ modules:
       - type: archive
         url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.15.tar.gz
         sha256: a68f73fd1c64400ac212334baf2b92c376bd05063b2b8054cc5a299cd3c1a0ab
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/quexten/goldwarden/releases/latest
+          version-query: ".tag_name"
+          url-query: ".tarball_url"
+  
   - name: goldwarden-core-daemon
     buildsystem: simple
     build-commands:
@@ -48,7 +54,17 @@ modules:
         url: https://github.com/quexten/goldwarden/releases/download/v0.2.15/goldwarden_linux_x86_64
         sha256: 1b4cbf39906d859414f68f9fa475b6542cda1158f92af7a59789267a73b83784
         only-arches: [x86_64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/quexten/goldwarden/releases/latest
+          version-query: ".tag_name"
+          url-query: ".assets[] | select(.name==\"goldwarden_linux_x86_64\") | .browser_download_url"
       - type: file
         url: https://github.com/quexten/goldwarden/releases/download/v0.2.15/goldwarden_linux_arm64
         sha256: 8b72eae779b028ad7fa9c3480044119e47fdaef6319aea1a428d41db6009ad09
         only-arches: [aarch64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/quexten/goldwarden/releases/latest
+          version-query: ".tag_name"
+          url-query: ".assets[] | select(.name==\"goldwarden_linux_arm64\") | .browser_download_url"
