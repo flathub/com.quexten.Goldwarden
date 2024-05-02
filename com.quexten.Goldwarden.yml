@@ -43,7 +43,7 @@ modules:
           type: json
           url: https://api.github.com/repos/quexten/goldwarden/releases/latest
           version-query: ".tag_name"
-          url-query: ".tarball_url"
+          url-query: "\"https://github.com/quexten/goldwarden/archive/refs/tags/\" + .tag_name + \".tar.gz\""
   
   - name: goldwarden-core-daemon
     buildsystem: simple
