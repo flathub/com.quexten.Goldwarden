@@ -34,8 +34,8 @@ modules:
       - install -Dm644 ./com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
-        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.16.tar.gz
-        sha256: a86e85e9cbd37181c412ca9e98e192551847da9ace456df09a0a3892164efa13
+        url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.3.1.tar.gz
+        sha256: e809e774b6ae2ad94defceced1edaf2c05661911f2cc712865a9f5002c03ffe3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/quexten/goldwarden/releases/latest
@@ -50,8 +50,8 @@ modules:
       - install -D goldwarden_linux_* /app/bin/goldwarden
     sources:
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.16/goldwarden_linux_x86_64
-        sha256: 6cecdd6b3a04b19e28d8359646a342ee6ed79edcf6375e0cfa290f6520fa5c73
+        url: https://github.com/quexten/goldwarden/releases/download/v0.3.1/goldwarden_linux_x86_64
+        sha256: 68258f6b96c448b2aa3467e603d41c4d13676c7be66bab1027073ed9f59e3d0c
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -59,8 +59,8 @@ modules:
           version-query: .tag_name
           url-query: .assets[] | select(.name=="goldwarden_linux_x86_64") | .browser_download_url
       - type: file
-        url: https://github.com/quexten/goldwarden/releases/download/v0.2.16/goldwarden_linux_arm64
-        sha256: 2d97a3bc1c21bfa9bca0478bf308c7f54b1515c6daa6c4c567a64f8a4bc4aa7d
+        url: https://github.com/quexten/goldwarden/releases/download/v0.3.1/goldwarden_linux_arm64
+        sha256: 8515d03bf687eac44a739c2c3b31e47872e204581eb052dc9a8a220b42349051
         only-arches: [aarch64]
         x-checker-data:
           type: json
