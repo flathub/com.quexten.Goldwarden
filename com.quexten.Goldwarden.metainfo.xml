@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2023 Bernd Schoolmann -->
+<component type="desktop">
+  <id>com.quexten.Goldwarden</id>
+  <launchable type="desktop-id">com.quexten.Goldwarden.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Goldwarden</name>
+  <summary>A Bitwarden compatible desktop client</summary>
+  <description>
+    <p>
+        Goldwarden is a Bitwarden compatible desktop password manager with a focus on features
+        the official client is missing.
+    </p>
+    <ul>
+      <li> Support for SSH keys (ssh-agent) for SSH login and Git commit signing </li>
+      <li> System-wide auto-type </li>
+      <li> Browser biometric login </li>
+      <li> Kernel level memory protection </li>
+    </ul>
+    <p>
+        For setup instructions for SSH keys and auto-type please read the wiki on the GitHub page.
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/quexten/goldwarden/assets/11866552/5d36ed8c-46f1-4444-adb0-f4ca1d0433c5</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/quexten/goldwarden</url>
+  <url type="bugtracker">https://github.com/quexten/goldwarden/issues/</url>
+  <url type="help">https://github.com/quexten/goldwarden/issues</url>
+  <developer_name>Bernd Schoolmann</developer_name>
+  <update_contact>mail@quexten.com</update_contact>
+  <releases>
+    <release version="0.2.16" date="2024-04-30"/>
+    <release version="0.2.15" date="2024-04-29"/>
+    <release version="0.2.14" date="2024-04-28"/>
+    <release version="0.2.13" date="2024-02-23"/>
+    <release version="0.2.12" date="2024-02-17"/>
+    <release version="0.2.9" date="2024-01-04"/>
+    <release version="0.2.7" date="2023-12-30"/>
+    <release version="0.2.6" date="2023-12-30"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>
