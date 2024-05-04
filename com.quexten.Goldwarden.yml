@@ -31,7 +31,7 @@ modules:
       - chmod +x /app/bin/goldwarden_ui_main.py
       - install -D ./gui/com.quexten.Goldwarden.desktop /app/share/applications/com.quexten.Goldwarden.desktop
       - install -D ./gui/goldwarden.svg /app/share/icons/hicolor/scalable/apps/com.quexten.Goldwarden.svg
-      - install -Dm644 ./gui/com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 ./com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
         url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.2.16.tar.gz
@@ -42,6 +42,8 @@ modules:
           version-query: .tag_name
           url-query: '"https://github.com/quexten/goldwarden/archive/refs/tags/" +
             .tag_name + ".tar.gz"'
+      - type: file
+        path: ./com.quexten.Goldwarden.metainfo.xml
   - name: goldwarden-core-daemon
     buildsystem: simple
     build-commands:
