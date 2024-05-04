@@ -22,6 +22,13 @@ finish-args:
   # biometric / user password auth
   - --system-talk-name=org.freedesktop.PolicyKit1
 modules:
+  - name: "blueprint-compiler"
+    buildsystem: meson
+    cleanup: ['*']
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/jwestman/blueprint-compiler
+        tag: v0.12.0
   - ./python3-requirements.json
   - name: goldwarden-python-ui
     buildsystem: simple
@@ -32,6 +39,7 @@ modules:
       - install -D ./gui/com.quexten.Goldwarden.desktop /app/share/applications/com.quexten.Goldwarden.desktop
       - install -D ./gui/goldwarden.svg /app/share/icons/hicolor/scalable/apps/com.quexten.Goldwarden.svg
       - install -Dm644 ./com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/
+      - blueprint-compiler batch-compile /app/bin/src/gui/.templates/ /app/bin/src/gui/ /app/bin/src/gui/*.blp
     sources:
       - type: archive
         url: https://github.com/quexten/goldwarden/archive/refs/tags/v0.3.1.tar.gz
