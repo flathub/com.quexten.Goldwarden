@@ -51,6 +51,10 @@ modules:
           version-query: .tag_name
           url-query: '"https://github.com/quexten/goldwarden/archive/refs/tags/" +
             .tag_name + ".tar.gz"'
+      - type: patch
+        paths:
+          - 0001-fix-autotypeing-with-libportal.patch
+        use-git: true
       - type: file
         path: ./com.quexten.Goldwarden.metainfo.xml
   - name: goldwarden-core-daemon

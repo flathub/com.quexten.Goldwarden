@@ -1,0 +1,23 @@
+From ad1ab73d7148f2349b1d1d18ea9786faeeb3d546 Mon Sep 17 00:00:00 2001
+From: Dusk Banks <me@bb010g.com>
+Date: Thu, 26 Sep 2024 21:48:29 -0700
+Subject: [PATCH] fix: autotypeing with libportal
+
+---
+ gui/src/services/autotype/libportal_autotype.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gui/src/services/autotype/libportal_autotype.py b/gui/src/services/autotype/libportal_autotype.py
+index 55faf33..bbc28ef 100644
+--- a/gui/src/services/autotype/libportal_autotype.py
++++ b/gui/src/services/autotype/libportal_autotype.py
+@@ -2,4 +2,4 @@ from ..goldwarden import autotype
+ 
+ def autotype_libportal(text):
+     print("autotypeing with libportal")
+-    goldwarden.autotype(text)
+\ No newline at end of file
++    autotype(text)
+-- 
+2.46.1
+
