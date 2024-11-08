@@ -1,6 +1,6 @@
 id: com.quexten.Goldwarden
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: goldwarden_ui_main.py
 finish-args:
@@ -29,6 +29,24 @@ modules:
       - type: git
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler
         tag: v0.12.0
+  - name: dbus-python
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/c1/d3/6be85a9c772d6ebba0cc3ab37390dd6620006dcced758667e0217fb13307/dbus-python-1.3.2.tar.gz
+        sha256: ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8
+  - name: libcbor
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/PJK/libcbor
+        tag: v0.11.0
+  - name: libfido2
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/Yubico/libfido2
+        tag: 1.15.0
   - ./python3-requirements.json
   - name: goldwarden-python-ui
     buildsystem: simple
