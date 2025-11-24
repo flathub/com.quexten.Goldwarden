@@ -31,6 +31,7 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://github.com/quexten/goldwarden</url>
+  <url type="vcs-browser">https://github.com/quexten/goldwarden</url>
   <url type="bugtracker">https://github.com/quexten/goldwarden/issues/</url>
   <url type="help">https://github.com/quexten/goldwarden/issues</url>
   <developer_name>Bernd Schoolmann</developer_name>
